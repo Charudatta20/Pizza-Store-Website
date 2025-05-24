@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario's Pizza Palace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Mario's Pizza Palace</div>
+            <ul class="nav-links">
+                <li><a onclick="scrollToSection('hero')">Home</a></li>
+                <li><a onclick="scrollToSection('menu')">Menu</a></li>
+                <li><a onclick="scrollToSection('footer')">Contact</a></li>
+            </ul>
+            <button class="cart-btn" onclick="toggleCart()">
+                🛒 Cart
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1>Authentic Italian Pizza</h1>
+                <p>Fresh ingredients, traditional recipes, and a passion for perfection</p>
+                <button class="cta-btn" onclick="scrollToSection('menu')">Order Now</button>
+            </div>
+        </section>
+
+        <section id="menu" class="menu">
+            <div class="container">
+                <h2 class="section-title">Our Menu</h2>
+                
+                <div class="menu-categories">
+                    <button class="category-btn active" onclick="filterMenu('all')">All</button>
+                    <button class="category-btn" onclick="filterMenu('pizza')">Pizzas</button>
+                    <button class="category-btn" onclick="filterMenu('appetizer')">Appetizers</button>
+                    <button class="category-btn" onclick="filterMenu('drink')">Drinks</button>
+                </div>
+
+                <div class="menu-grid" id="menuGrid">
+                    <!-- Menu items will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>📞 (555) 123-PIZZA</p>
+                    <p>📧 info@mariospizza.com</p>
+                    <p>📍 123 Pizza Street, Flavor Town</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Monday - Thursday: 11am - 10pm</p>
+                    <p>Friday - Saturday: 11am - 11pm</p>
+                    <p>Sunday: 12pm - 9pm</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>🌟 Facebook | Instagram | Twitter</p>
+                    <p>⭐ 4.8/5 Stars on Google Reviews</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Mario's Pizza Palace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total" id="cartTotal">Total: $0.00</div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
